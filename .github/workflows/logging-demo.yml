@@ -1,0 +1,14 @@
+name: Enhanced Logging Demo
+on: [push]
+
+jobs:
+  logging-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute build process
+        run: |
+          echo "::group::Dependency Installation"
+          echo "::notice::Initializing package installation"
+          npm install
+          echo "::warning::Detected outdated dependency"
+          echo "::endgroup::"
